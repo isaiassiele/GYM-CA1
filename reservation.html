@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM-PRO</title>
+    <link rel="icon" type="image/x-icon" href="images/icon1.png">
+<!--This a link to the CSS Style-->
+    <link rel="stylesheet" type="text/css" href="reserve.css">
+<!--This is a link from the Font-Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+</head>
+<body>
+
+<!--This is the Navigation Part-->
+    <div class="nav-container">
+        <nav class="navbar">
+            <h id="navbar-logo">GYM-PRO</h>         
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html" class="nav-links">Home</a></li>
+                <li><a href="index.html" class="nav-links">Buy</a></li>
+                <li><a href="index.html" class="nav-links">New Offer</a></li>
+                <li><a href="index.html" class="nav-links">Contact As</a></li>
+                <li><a href="index.html" class="nav-links btn-links">SignUp</a></li>
+            </ul>    
+        </nav>
+    </div>
+    
+<!--This the Reservation Form-->   
+    <div id="popup" class="overlay">
+        <div class="wrapper">
+            <div class="column details ">                 
+                <div class="signup">
+                    <h1>Reserve Item</h1>
+                    <input class="reserve_inputs"  type="name" placeholder="First Name">
+                    <p id="name"class="Error"></p>
+                    <input class="reserve_inputs"  type="lastname" placeholder="Last Name">
+                    <p id="lastname"class="Error"></p>
+                    <input class="reserve_inputs"  type="email" placeholder="email">
+                    <p id="email"class="Error"></p>
+                    <input class="reserve_inputs"  type="phone" placeholder="Phone No">
+                    <p id="phone"class="Error"></p>
+                    <input class="reserve_inputs"  type="Address" placeholder="Address">
+                    <p id="address"class="Error"></p>
+                    <button class="form-submit" onclick="validation()">Reserve Now</button>
+                </div>
+            </div>
+            
+<!--This is for Populating the data-->
+            <div class="column content">
+                <div id="signun" class="signun">
+                    <h1>Dumbell</h1>
+                    <p>Price:20€</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--This is the Footer Section-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        let name = localStorage.getItem("reserveName")
+        let Price = localStorage.getItem("Price")
+        document.getElementById("signun").innerHTML = `<h1>${name}</h1>
+                    <p>Price:${Price}</p>`
+
+        function validation() {
+            let data = document.getElementsByClassName("reserve_inputs");
+            console.log(data)
+
+var firstName = data[0].value;
+
+var lastName = data[1].value;
+
+var email = data[2].value;
+
+var phone = data[3].value;
+
+var address = data[4].value;
+
+var regEmail = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+
+var regPhone = /^\d{10}$/;
+
+let error = []
+
+if (firstName === "") {
+
+    error = [...error,1]
+
+    document.getElementById("name").innerHTML = "please enter first name"
+
+}
+
+else{
+
+    document.getElementById("name").innerHTML = ""
+
+    error = error.filter(num => num !== 1);
+
+}
+
+if (lastName === "") {
+
+    error = [...error,2]
+
+    document.getElementById("lastname").innerHTML = "please enter last name"
+
+}
+
+else{
+
+    document.getElementById("lastname").innerHTML = ""
+
+    error = error.filter(num => num !== 2);
+
+}
+
+if (email === "" || !regEmail.test(email)) {
+
+    error = [...error,3]
+
+    document.getElementById("email").innerHTML = "please enter correct email-id"
+
+}
+
+else{
+
+    document.getElementById("email").innerHTML = ""
+
+    error = error.filter(num => num !== 3);
+
+}
+
+if (phone === "" || !regPhone.test(phone)) {
+
+    error = [...error,4]
+
+    document.getElementById("phone").innerHTML = "please enter correct phoneNo."
+
+}
+
+else{
+
+    document.getElementById("phone").innerHTML = ""
+
+    error = error.filter(num => num !== 4);
+
+}
+
+if (address === "") {
+
+    error = [...error,5]
+
+    document.getElementById("address").innerHTML = "please enter address"
+
+}
+
+else{
+
+    document.getElementById("address").innerHTML = ""
+
+    error = error.filter(num => num !== 5);
+
+}
+
+if(error.length === 0){
+    window.open('index.html','_self')
+    window.alert("Your Item is added")
+}
+
+}
+        
+    </script>
+    
+</body>
+</html>

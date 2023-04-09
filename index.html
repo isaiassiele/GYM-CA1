@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM-PRO</title>
+    <link rel="icon" type="image/x-icon" href="images/icon1.png">
+<!--This a link to the CSS Style-->
+    <link rel="stylesheet" href="style.css">
+
+<!--This is a link from the Font-Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!--This is the Navigation Part-->
+    <div class="nav-container">
+        <nav class="navbar">
+            <h id="navbar-logo">GYM-PRO</h>         
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="menu">
+                <li><a href="#cat" class="nav-links">Home</a></li>
+                <li><a href="#cat2" class="nav-links">Buy</a></li>
+                <li><a href="#cat3" class="nav-links">New Offer</a></li>
+                <li><a href="#cat4" class="nav-links">Contact As</a></li>
+                <li><a href="#" class="nav-links btn-links">SignUp</a></li>
+            </ul>    
+        </nav>
+    </div>
+
+<!--This is the Welcome page Part of the Web-Page-->
+    <div class="categories" id="cat">
+        <div class="small-container">
+            <h1 class="title">WELCOME TO GYM-PRO EQUIPEMENT SELLER</h1>
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/32.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <img src="images/34.jpg" alt="">
+                </div>
+                <div class="col-3">
+                    <img src="images/33.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--This is the Sample Products Section-->
+    <div class="small-container" id="cat1">
+        <h2 class="title">We are Here For You with New Equipments</h2>
+        <div id="sampleProducts" class="row">
+        </div>
+    </div>
+
+<!--This is the Search Bar Section-->
+
+    <form id="cat2">
+        <i class="fa-solid fa-magnifying-glass search"></i>
+        <input type="text" name="" id="search-item" placeholder="Search Products" onkeyup="searchProducts()">
+    </form>
+
+<!--This is the Buy Products/All Products Section-->
+
+    <div class="small-container">
+        <h2 class="title">Buy Our Products</h2>
+        <div id="allProducts" class="row" id="serch">
+        </div>
+    </div>
+
+<!--This is the New Coming Products-->
+    <div class="offer" id="cat3">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/gymm.jpg" alt="" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Coming Soon</p>
+                    <h1>Battle Rope</h1>
+                    <small>You might need it</small>
+                    <a href="" class="btn">Reserve</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--This is the Contact As Section-->
+    <div class="contactus" id="cat4">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <p>Hello and Welcome for our products</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="images/Isaias.jpg" alt="">
+                    <h3>You can contact as on:<br>Tele:089933444<br>Email:xyz@gympro.com<br>Isaias</h3>
+                </div>
+                <div class="col-3">
+                    <p>Hello and Welcome for our products</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <img src="images/Sohaib.jpg" alt="">
+                    <h3>You can contact as on:<br>Tele:089933444<br>Email:xyz@gympro.com<br>Sohaib</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--This is the Footer Section-->
+    <div class="footer">
+        <div class="social-media">
+            <a><i class="fab fa-instagram"></i></a>
+            <a><i class="fab fa-snapchat"></i></a>
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <ul class="infolist">
+            <li><a href="#cat">Home</a></li>
+            <li><a href="#cat2">Services</a></li>
+            <li><a href="#More">More</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <p class="copyright">
+        Copy Right Reserved @2022
+        </p>
+    </div>
+<!--This is a cript that links to the JavaScript Section-->
+    <script src="main.js"></script>
+    <script>
+        allProducts()
+        sampleProducts()
+    </script>
+    
+</body>
+</html>
